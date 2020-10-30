@@ -7,16 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RabbitListener(queues = "helloQueue")
-public class ReceiveController {
-
-    /*@RabbitHandler
-    @RequestMapping("/receive")
-    public void receive(String hello) {
-        System.out.println("Receive : " + hello);
-    }*/
+public class ReceiveController2 {
 
     @RabbitHandler
     public void process(String hello) {
-        System.out.println("Receiver 1: " + hello);
+        System.out.println("Receiver 2: " + hello);
     }
 }
